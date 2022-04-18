@@ -5,7 +5,7 @@ pipeline {
 
   stages {
 
-    stage('Git') {
+    stage('Pull code ') {
       steps {
         git 'https://github.com/devraj2048/mobx-weather.git'
       }
@@ -19,10 +19,11 @@ pipeline {
     }
 
 
-//    stage('Test') {
- //     steps {
-  //      sh 'node test'
-   //   }
-   // }
+stage('deploy a code ') {
+  def sshToDevserver = 'npm run'
+     steps {
+       sh "ssh root@192.168.0.106 ${sshToDevserver}"
+      }
+    }
   }
 }
