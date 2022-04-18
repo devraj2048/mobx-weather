@@ -19,11 +19,11 @@ pipeline {
     }
 
 
-stage('deploy a code ') {
-  def sshToDevserver = 'npm run'
-     steps {
-       sh "ssh root@192.168.0.106 ${sshToDevserver}"
-      }
-    }
+//stage('deploy a code ') {
+  //def sshToDevserver = 'npm run'
+    // steps {
+      // sh "ssh root@192.168.0.106 ${sshToDevserver}"
+      //}
+    //}
   }
 }
