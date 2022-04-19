@@ -5,7 +5,7 @@ pipeline {
 
   stages {
 
-    stage('Pull code ') {
+    stage('Pullcode ') {
       steps {
         git 'https://github.com/devraj2048/mobx-weather.git'
       }
