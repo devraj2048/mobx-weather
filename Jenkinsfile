@@ -21,7 +21,7 @@ pipeline {
 
 stage('deploy a code ') {
      steps {
-      sh 'cd /var/lib/jenkins/workspace/'
+      sh 'cd /var/lib/jenkins/workspace'
        sh 'pwd'
        sh 'echo checking checking'
        sh 'sudo tar -czvf source.tar.gz mumbatti'
