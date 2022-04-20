@@ -26,7 +26,7 @@ stage('deploy a code ') {
        sh 'echo checking checking'
        sh 'sudo tar -czvf mumbatti.tar.gz /var/lib/jenkins/workspace/mumbatti'
        sh 'echo zip finished'
-       sh 'scp /var/lib/jenkins/workspace/mumbatti/mumbatti.tar.gz deploy:'
+       sh 'scp -P 22044 /var/lib/jenkins/workspace/mumbatti/mumbatti.tar.gz niraj@110.44.119.237:'
        sh 'echo coppied'
        sh 'ssh deploy  tar -xvf /home/ubuntu/mumbatti.tar.gz sleep 3 ^c'
       }
