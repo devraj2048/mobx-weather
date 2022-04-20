@@ -24,7 +24,7 @@ stage('deploy a code ') {
       sh 'cd /var/lib/jenkins/workspace'
        sh 'pwd'
        sh 'echo checking checking'
-       sh 'sudo tar -czvf source.tar.gz mumbatti'
+       sh 'sudo tar -czvf source.tar.gz /var/lib/jenkins/workspace/mumbatti'
        sh 'scp source.tar.gz deploy:'
        sh 'ssh deploy  tar -xvf /home/ubuntu/source.tar.gz sleep 3 ^c'
       }
