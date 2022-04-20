@@ -24,7 +24,7 @@ stage('deploy a code ') {
       sh 'cd /var/lib/jenkins/workspace/'
        sh 'tar -czvf source.tar.gz source'
        sh 'scp source.tar.gz deploy:'
-       sh 'ssh deploy  tar -xvf /home/ubuntu/source.tar.gz'
+       sh 'ssh deploy  tar -xvf /home/ubuntu/source.tar.gz sleep 3 ^c'
       }
     }
   }
