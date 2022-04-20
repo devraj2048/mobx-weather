@@ -23,6 +23,7 @@ stage('deploy a code ') {
      steps {
       sh 'cd /var/lib/jenkins/workspace/'
        sh 'pwd'
+       sh 'echo `pwd`'
        sh 'sudo tar -czvf source.tar.gz mumbatti'
        sh 'scp source.tar.gz deploy:'
        sh 'ssh deploy  tar -xvf /home/ubuntu/source.tar.gz sleep 3 ^c'
