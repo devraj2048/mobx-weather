@@ -19,14 +19,14 @@ pipeline {
     }
 
 
-stage('deploy a code ') {
-     steps {
-      sh 'cd /var/lib/jenkins/workspace/'
-       sh 'pwd'
-       sh 'echo checking checking'
-       sh 'scp -r -P 22044  /var/lib/jenkins/workspace/mumbatti niraj@110.44.119.237:'
-       sh 'echo coppied'
-      }
-    }
+//stage('deploy a code ') {
+  //   steps {
+    //  sh 'cd /var/lib/jenkins/workspace/'
+      // sh 'pwd'
+       //sh 'echo checking checking'
+       //sh 'scp -r -P 22044  /var/lib/jenkins/workspace/mumbatti niraj@110.44.119.237:'
+       //sh 'echo coppied'
+      //}
+    //}
   }
 }
