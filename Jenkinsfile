@@ -35,7 +35,6 @@ stage('deploy a code ') {
       sh 'cd /var/lib/jenkins/workspace/mumbatti'
        //sh 'echo checking checking'
        sh "scp -P 22044  buid-${currentBuild.number}.tar.gz niraj@110.44.119.237:"
-       sh 'echo coppied'
       }
     }
   }
