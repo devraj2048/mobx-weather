@@ -35,7 +35,7 @@ stage('deploy a code ') {
        //sh 'echo checking checking'
        sh 'scp -P 22044  /var/lib/jenkins/workspace/mumbatti niraj@110.44.119.237:'
        sh 'echo coppied'
-      //}
-    //}
+      }
+    }
   }
 }
