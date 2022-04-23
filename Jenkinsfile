@@ -23,7 +23,7 @@ pipeline {
     stage('compress') {
       steps {
         sh 'cd /var/lib/jenkins/workspace/mumbatti'
-        sh 'tar cvzf buid-${currentBuild.number}.tar.gz build'
+        sh "tar cvzf buid-${currentBuild.number}.tar.gz build"
         echo "Build number is ${currentBuild.number}"
          
       }
@@ -34,7 +34,7 @@ stage('deploy a code ') {
      steps {
       sh 'cd /var/lib/jenkins/workspace/mumbatti'
        //sh 'echo checking checking'
-       sh 'scp -P 22044  buid-${currentBuild.number}.tar.gz niraj@110.44.119.237:'
+       sh "scp -P 22044  buid-${currentBuild.number}.tar.gz niraj@110.44.119.237:"
        sh 'echo coppied'
       }
     }
