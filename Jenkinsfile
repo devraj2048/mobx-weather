@@ -19,6 +19,14 @@ pipeline {
          sh 'npm run build'
       }
     }
+    
+    stage('compress') {
+      steps {
+        sh 'cd /var/lib/jenkins/workspace/mumbatti'
+        sh 'tar buid.tar.gz build'
+         
+      }
+    }
 
 
 //stage('deploy a code ') {
