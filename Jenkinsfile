@@ -23,7 +23,7 @@ pipeline {
     stage('compress') {
       steps {
         sh 'cd /var/lib/jenkins/workspace/mumbatti'
-        sh 'tar buid.tar.gz build'
+        sh 'tar cvzf buid.tar.gz build'
          
       }
     }
