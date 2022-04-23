@@ -24,6 +24,7 @@ pipeline {
       steps {
         sh 'cd /var/lib/jenkins/workspace/mumbatti'
         sh 'tar cvzf buid.tar.gz build'
+        echo "Build number is ${currentBuild.number}"
          
       }
     }
