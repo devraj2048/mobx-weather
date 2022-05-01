@@ -2,7 +2,7 @@ FROM node:alpine
 WORKDIR /app
 COPY package.json ./
 COPY package-lock.json ./
-COPY node_modules ./
 COPY ./ ./
 RUN npm i
+COPY node_modules ./
 CMD ["npm", "run", "start"]
