@@ -17,7 +17,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t jarina/jenish:"${env.BUILD_NUMBER}" .'
+				sh 'docker build -t jarina/jenish:1.'
 			}
 		}
 
@@ -33,7 +33,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push jarina/jenish:"${env.BUILD_NUMBER}"'
+				sh 'docker push jarina/jenish:1'
 			}
 		}
 	}
