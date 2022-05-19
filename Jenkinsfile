@@ -17,7 +17,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t jarina/jenish:latest .'
+				sh 'docker build -t jarina/jenish:${currentBuild.number} .'
 			}
 		}
 
@@ -31,7 +31,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push jarina/jenish:latest'
+				sh 'docker push jarina/jenish:${currentBuild.number}'
 			}
 		}
 	}
