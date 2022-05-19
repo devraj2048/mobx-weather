@@ -17,6 +17,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
+				sh 'echo ${currentBuild.number}'
 				sh 'docker build -t jarina/jenish:2 .'
 			}
 		}
