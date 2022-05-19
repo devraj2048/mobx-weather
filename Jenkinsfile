@@ -17,7 +17,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t jarina/jenish:${currentBuild.number} .'
+				sh 'docker build -t nodeapp .'
 			}
 		}
 
@@ -33,7 +33,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push jarina/jenish:${currentBuild.number}'
+				sh 'docker push nodeapp'
 			}
 		}
 	}
