@@ -17,7 +17,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t jarina/jenish:${currentBuild.number} .'
+				sh 'docker build -t jarina/jenish:latest .'
 			}
 		}
 
