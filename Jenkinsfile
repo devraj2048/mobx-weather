@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('jarina-jk1')
+		DOCKERHUB_CREDENTIALS=credentials('jk1')
 	}
 
 	stages {
@@ -17,7 +17,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t reactapp .'
+				sh 'docker build -t jarina/jenish:latest .'
 			}
 		}
 
