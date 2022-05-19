@@ -1,41 +1,45 @@
-pipeline {
-  agent any
+pipeline{
 
-  tools {
-    nodejs "nodejs"
-  }
+	agent any
 
-  stages {
+	environment {
+		DOCKERHUB_CREDENTIALS=credentials('jarina-jk1')
+	}
 
-    stage('Pullcode ') {
-      steps {
-        git 'https://github.com/devraj2048/mobx-weather.git'
-      }
-    }
-
-    stage('Build') {
-      steps {
-        sh 'npm install'
-         sh 'npm run build'
-      }
-    }
-    
-    stage('compress') {
-      steps {
-        sh 'cd /var/lib/jenkins/workspace/mumbatti'
-        sh "tar cvzf buid-${currentBuild.number}.tar.gz build"
-         
-      }
-    }
+	stages {
+	    stage('Pullcode ') {
+			steps {
+			git 'https://github.com/devraj2048/mobx-weather.git'
+			}
+		}
 
 
-stage('deploy a code ') {
-     steps {
-      sh 'cd /var/lib/jenkins/workspace/mumbatti'
-       //sh 'echo checking checking'
-       sh "scp -P 22044  buid-${currentBuild.number}.tar.gz niraj@110.44.119.237:"
-       sh "ssh -p 22044 niraj@110.44.119.237 tar -xvf buid-${currentBuild.number}.tar.gz --directory  /usr/share/nginx/html/"
-      }
-    }
-  }
+		stage('Build') {
+
+			steps {
+				sh 'docker build -t jarina/jenish:${currentBuild.number} .'
+			}
+		}
+
+		stage('Login') {
+
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
+
+		stage('Push') {
+
+			steps {
+				sh 'docker push jarina/jenish:latest'
+			}
+		}
+	}
+
+	post {
+		always {
+			sh 'docker logout'
+		}
+	}
+
 }
