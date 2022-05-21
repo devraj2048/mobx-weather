@@ -32,7 +32,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push devraj2048/node-app'
+				sh 'docker push nodeapp'
 			}
 		}
 	}
