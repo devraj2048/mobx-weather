@@ -17,13 +17,9 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t reactapp .'
+				sh 'docker build -t "$BUILD_NUMBER" .'
 			}
-			script { 
 
-                    dockerImage = docker.build registry + :"$BUILD_NUMBER" 
-
-                }
 		}
 
 		stage('Login') {
