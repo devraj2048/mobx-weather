@@ -32,7 +32,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push node-app:"$BUILD_NUMBER"'
+				sh 'docker push node-app/"$BUILD_NUMBER":latest'
 			}
 		}
 	}
