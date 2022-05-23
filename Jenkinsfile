@@ -17,7 +17,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t devraj2048/node-app: .'
+				sh 'docker build -t devraj2048/node-app:latest .'
 			}
 
 		}
@@ -32,7 +32,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push devraj2048/node-app:'
+				sh 'docker push devraj2048/node-app:latest'
 			}
 		}
 	}
