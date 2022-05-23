@@ -18,7 +18,7 @@ pipeline{
 
 			steps {
 				sh 'docker build -t devraj2048/node-app:latest .'
-				sh 'docker build -t devraj2048/node-app:"$build-number" .'
+				sh 'docker build -t devraj2048/node-app:"$BUILD_NUMBER" .'
 			}
 
 		}
@@ -34,7 +34,7 @@ pipeline{
 
 			steps {
 				sh 'docker push devraj2048/node-app:latest'
-				sh 'docker push devraj2048/node-app:"$build-number"'
+				sh 'docker push devraj2048/node-app:"$BUILD_NUMBER"'
 			}
 		}
 	}
